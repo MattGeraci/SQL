@@ -1,4 +1,5 @@
 ---Create a telescope store database
+-- My firstg project/SQL creating a dtatbase for a telescope/astronmy store
 
 create table TelescopeStore (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER );
 
