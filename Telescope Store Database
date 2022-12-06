@@ -1,26 +1,39 @@
 ---Create a telescope store database
 -- My first project/SQL creating a dtatbase for a telescope/astronmy store
 
-create table TelescopeStore (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER );
+create table TelescopeStore 
+(id INTEGER PRIMARY KEY, 
+asile INTEGER
+item TEXT, 
+price INTEGER, 
+quantity INTEGER );
 
-INSERT INTO TelescopeStore VALUES (1, "eyepiece 10mm", 50, 100);
-INSERT INTO TelescopeStore VALUES (2, "eyepiece 25mm", 30, 250);
-INSERT INTO TelescopeStore VALUES (3, "eyepiece 6mm", 90, 100);
-INSERT INTO TelescopeStore VALUES (4, "eyepiece 9mm", 69, 80);
-INSERT INTO TelescopeStore VALUES (5, "eyepiece 4mm", 100, 50);
-INSERT INTO TelescopeStore VALUES (6, "Barlow 2X", 75, 50);
-INSERT INTO TelescopeStore VALUES (7, "Barlow 3X", 100, 100);
-INSERT INTO TelescopeStore VALUES (8, "Tripod", 250, 100);
-INSERT INTO TelescopeStore VALUES (9, "Optical Tube", 300, 40);
-INSERT INTO TelescopeStore VALUES (10, "Finder Scope", 30, 100);
-INSERT INTO TelescopeStore VALUES (11, "Red Dot Finder", 150, 175);
-INSERT INTO TelescopeStore VALUES (12, "Zoom Lens 2-10x", 50, 250);
-INSERT INTO TelescopeStore VALUES (13, "Astronmy Laser", 20, 300);
-INSERT INTO TelescopeStore VALUES (14, "Star Tracker", 199, 10);
-INSERT INTO TelescopeStore VALUES (15, "Tracking Mount", 500, 20);
+INSERT INTO TelescopeStore VALUES (1, 1, "eyepiece 10mm", 50, 100);
+INSERT INTO TelescopeStore VALUES (2, 1, "eyepiece 25mm", 30, 250);
+INSERT INTO TelescopeStore VALUES (3, 1, "eyepiece 6mm", 90, 100);
+INSERT INTO TelescopeStore VALUES (4, 1, "eyepiece 9mm", 69, 80);
+INSERT INTO TelescopeStore VALUES (5, 1, "eyepiece 4mm", 100, 50);
+INSERT INTO TelescopeStore VALUES (6, 2, "Barlow 2X", 75, 50);
+INSERT INTO TelescopeStore VALUES (7, 2, "Barlow 3X", 100, 100);
+INSERT INTO TelescopeStore VALUES (8, 3, "Tripod", 250, 100);
+INSERT INTO TelescopeStore VALUES (9, 3, "Optical Tube", 300, 40);
+INSERT INTO TelescopeStore VALUES (10, 3, "Finder Scope", 30, 100);
+INSERT INTO TelescopeStore VALUES (11, 4, "Red Dot Finder", 150, 175);
+INSERT INTO TelescopeStore VALUES (12, 1, "Zoom Lens 2-10x", 50, 250);
+INSERT INTO TelescopeStore VALUES (13, 4, "Astronmy Laser", 20, 300);
+INSERT INTO TelescopeStore VALUES (14, 3, "Star Tracker", 199, 10);
+INSERT INTO TelescopeStore VALUES (15, 3, "Tracking Mount", 500, 20);
 
 --Display database ordered by price 
 SELECT * FROM Telescopestore
 ORDER BY price desc;
 
+-- what is the average price of all eyepieces and barlow lenses in asile 1 &2?
+SELECT avg(price) 
+FROM TelescopeStore 
+WHERE asile = 1 or 2; 
 
+What is the total number of items in each asile? 
+SELECT Asile, SUM(quantity) 
+FROM TelescopeStore 
+GROUP BY (Asile);
