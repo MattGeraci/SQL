@@ -1,0 +1,14 @@
+-- Wanted to make a table with the top NHL scorers of the 22' Season. 
+
+CREATE TABLE NHLScoring (id INTEGER PRIMARY KEY, Player TEXT, Team TEXT, Goals INTEGER, 
+Points INTEGER);
+
+INSERT INTO NHLScoring VALUES (1,"Jason Robertson","DAL",23, 41);
+INSERT INTO NHLScoring VALUES (2,"Connor McDavid","EDM",22, 48);
+INSERT INTO NHLScoring VALUES (3,"Bo Hovart","VAN",20, 27);
+INSERT INTO NHLScoring VALUES (4,"	
+Leon Draisaitl","EDM",17, 42);
+INSERT INTO NHLScoring VALUES (5,"David Pastarnak","BOS",17, 35);
+INSERT INTO NHLScoring VALUES (6, "	
+Tage Thompson", "BUF", 16,34);
+
